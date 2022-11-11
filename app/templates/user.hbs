@@ -1,0 +1,43 @@
+{{page-title "User"}}
+
+<NavBar />
+{{!-- <Jumbo> --}}
+<h2 class="d-flex justify-content-center app-header">Add User</h2>
+
+<section class="pb-4">
+    <div class="bg-white border rounded-5">
+        <section class="w-100 p-4 d-flex justify-content-center pb-4">
+            <form>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="name">Full Name*</label>
+                    {{input value=name placeholder="Enter Your Name" class="form-control"}}
+                    <small id="nameerror" class="text-danger">{{errors.name}}</small>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email*</label>
+                    {{input value=email placeholder="Enter Your Email" class="form-control"}}
+                    <small id="emailerror" class="text-danger">{{errors.email}}</small>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="age">Age*</label>
+                    {{input value=age placeholder="Enter Your Age" class="form-control"}}
+                    <small id="ageerror" class="text-danger">{{errors.age}}</small>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="phone">Phone*</label>
+                    {{input value=phone placeholder="Enter Your Phone" class="form-control"}}
+                    <small id="phoneerror" class="text-danger">{{errors.phone}}</small>
+                </div>
+
+                <!-- Submit button -->
+                <button class="btn btn-primary btn-block" type="submit" {{action 'createApplication' }}>Create Application</button>
+                {{!-- {{#link-to "application-list" class="btn btn-primary btn-block"}}Application List{{/link-to}} --}}
+                {{#if applicationsaved}}<div class="alert alert-info" role="alert">{{applicationsaved}}</div>{{/if}}
+            </form>
+        </section>
+    </div>
+</section>
+{{!-- </Jumbo> --}}
